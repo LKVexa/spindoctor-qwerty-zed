@@ -56,6 +56,16 @@ End-to-end checks (through the host entry point, `tests/e2e_mcp.py`):
 there ("Failed to create surface for any enabled backend": no GPU/Vulkan), so Zed itself could not load the extension. The stand-in
 host `tests/zed_host_check.py` was used instead. No language model was called and no account or API key was used.
 
-## Post-push verification
+## Post-push clone
 
-See the "Post-push clone" section below (filled in after publishing).
+After publishing, the repository was cloned back from GitHub into a fresh folder and re-tested under `env -i`:
+
+| Check | Result |
+|---|---|
+| Files | 55/55 present; 54 byte-identical to the staged copy. `engine/spindoctor/data/SPINDOCTOR_COMMAND_CATALOGUE.txt` arrived with LF instead of CRLF line endings (reference text only; content otherwise identical) |
+| `sh build.sh` | Rust unit tests pass; `extension.wasm` builds and validates |
+| `python3 tests/zed_host_check.py` | 8/8 host checks, end-to-end **12/12** |
+
+Binaries: `extension.wasm` is not committed (the publishing connector carries text files only); Zed builds it during
+*Install Dev Extension*, or run `sh build.sh`. Commits are made by the LKVexa account (commit e-mail russellsmithson77@outlook.com); the connector cannot
+set the author name, so authorship is recorded in the README, NOTICE, COPYRIGHT, manifests and file headers.
