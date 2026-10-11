@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "engine": {"type": "string", "minLength": 1, "pattern": "spindoctor_mcp\\.py\\s*$", "description": "Absolute path to engine/scripts/spindoctor_mcp.py inside the spindoctor-qwerty-zed folder."},
+    "python": {"type": "string", "description": "Python 3.8+ executable (default python3; python on Windows)."},
+    "workspace": {"type": "string", "description": "Optional SpinDoctor workspace folder for reports (default ~/spindoctor-workspace)."}
+  },
+  "required": ["engine"],
+  "additionalProperties": false
+}

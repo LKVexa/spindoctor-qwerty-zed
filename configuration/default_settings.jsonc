@@ -1,0 +1,10 @@
+{
+  // Absolute path to the bundled engine's MCP launcher inside this repository, for example
+  // "/home/you/spindoctor-qwerty-zed/engine/scripts/spindoctor_mcp.py"  or
+  // "C:/Users/you/spindoctor-qwerty-zed/engine/scripts/spindoctor_mcp.py"
+  "engine": "",
+  // Optional: Python 3.8+ executable (default: python3; python on Windows)
+  "python": "",
+  // Optional: folder for reports and session state (default: ~/spindoctor-workspace)
+  "workspace": ""
+}
